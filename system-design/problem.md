@@ -82,19 +82,16 @@ The mathematical model is based on the vector rotational transformation model th
 * Let vector $\vec{V}$ be a vector in an $R^3$ vectorspace; such that:
 
 $$
-\begin{equation*}
 \vec{V} = \begin{pmatrix}
 \|\vec{V}\| \cdot \cos(\phi_{(\vec{V}, \vec{V}_x)}) \\
 \|\vec{V}_{yz}\| \cdot \cos\left(\frac{\pi}{2} - \phi_{(\vec{V}_{yz}, \vec{V}_z)}\right) \\
 \|\vec{V}_{yz}\| \cdot \cos(\phi_{(\vec{V}_{yz}, \vec{V}_z)})
 \end{pmatrix}
-\end{equation*}
 $$
 
 * Therefore, the rotated vector around the X-axis using angle $\phi_R$ with the positive direction of Z-axis (Z-convention) using the direction cosines methodology; could be rewritten as a function of the rotational angle by evaluating the addition trigonometric identity using the Euclidean Geometry:
 
 $$ 
-\begin{equation*}
 \vec{V}^{'} = \begin{pmatrix}
 \|\vec{V}\|\cos(\phi_{(\vec{V}, \vec{V}_x)}) \\
 \|\vec{V}_{yz}\|(\sin(\phi_{(\vec{V}_{yz}, \vec{V}_z)})\cos(\phi_{R}) \pm \cos(\phi_{(\vec{V}_{yz}, \vec{V}_z)})
@@ -102,14 +99,12 @@ $$
 \|\vec{V}_{yz}\|(\cos(\phi_{(\vec{V}_{yz}, \vec{V}_z)})\cos(\phi_{R}) \mp \sin(\phi_{(\vec{V}_{yz}, \vec{V}_z)})
             \sin(\phi_{R})) \\
 \end{pmatrix}
-\end{equation*}
 $$
 
 
 * The rotated vector around the X-axis with Z-convention expressed in direction cosines; could be further rewritten using matrix algebra into a **matrix product of a rotation matrix and the vector column matrix**; where $R_x$ is the rotation matrix around X-Axis with Z-convetion:
 
 $$
-\begin{equation*}
 \vec{V}^{'} = R_x(\pm \hat{\Phi_R}) \times \vec{V} \\
             = \begin{pmatrix}
                 1 & 0 & 0 \\
@@ -122,94 +117,92 @@ $$
                \|\vec{V}_{yz}\|\sin(\phi_{(\vec{V}_{yz}, \vec{V}_z)}) \\
                \|\vec{V}_{yz}\|\cos(\phi_{(\vec{V}_{yz}, \vec{V}_z)})
               \end{pmatrix}
-            \\
-            = 
-            \begin{pmatrix}
-                1 & 0 & 0 \\
-                0 & \cos(\phi_{R}) & \pm \sin(\phi_{R}) \\
-                0 & \mp \sin(\Phi_R) & \cos(\phi_{R})
-              \end{pmatrix} 
-              \times
-              \begin{pmatrix}
-               \cos(\phi_{(\vec{V}, \vec{V}_x)}) \\
-               \sin(\phi_{(\vec{V}_{yz}, \vec{V}_z)}) \\
-               \cos(\phi_{(\vec{V}_{yz}, \vec{V}_z)})
-              \end{pmatrix}
-              \times 
-              \begin{pmatrix}
-              \|\vec{V}\| \\
-              \|\vec{V}_{yz}\| \\
-              \|\vec{V}_{yz}\|
-              \end{pmatrix}^\top
-  \end{equation*}
+$$
+
+$$
+= \begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & \cos(\phi_{R}) & \pm \sin(\phi_{R}) \\
+    0 & \mp \sin(\Phi_R) & \cos(\phi_{R})
+\end{pmatrix} 
+    \times
+\begin{pmatrix}
+   \cos(\phi_{(\vec{V}, \vec{V}_x)}) \\
+   \sin(\phi_{(\vec{V}_{yz}, \vec{V}_z)}) \\
+   \cos(\phi_{(\vec{V}_{yz}, \vec{V}_z)})
+\end{pmatrix}
+    \times 
+\begin{pmatrix}
+  \|\vec{V}\| \\
+  \|\vec{V}_{yz}\| \\
+  \|\vec{V}_{yz}\|
+\end{pmatrix}^\top
 $$
 
 * Therefore, the rest of rotation operations could be expressed using rotation matrices as follows:
   * Rotation around Y-axis (**X-convention**):
   
-  $$
-  \begin{equation*}
-  \vec{V}^{'} = R_y(\pm \hat{\Phi_R}) \times \vec{V} \\
-              =   
-                \begin{pmatrix}
+$$
+\vec{V}^{'} = R_y(\pm \hat{\Phi_R}) \times \vec{V} \\
+            = \begin{pmatrix}
                 \|\vec{V}_{xz}\|(\cos(\phi_{R})\cos(\phi_{(\vec{V}_{xz}, \vec{V}_x)}) \mp 
                 \sin(\phi_{R})\sin(\phi_{(\vec{V}_{xz}, \vec{V}_x)})) \\
                 \|\vec{V}\|\cos(\phi_{(\vec{V}, \vec{V}_y)}) \\
                 \|\vec{V}_{xz}\|(\pm \sin(\phi_{R})\cos(\phi_{(\vec{V}_{xz}, \vec{V}_x)}) + \cos(\phi_{R})\sin(\phi_{(\vec{V}_{xz}, \vec{V}_x)})) 
-                \end{pmatrix}
-            \\ 
-              = \begin{pmatrix}
-                  \cos(\phi_R) & 0 & \mp \sin(\phi_R) \\
-                  0 & 1 & 0 \\
-                  \pm \sin(\phi_R) & 0 & \cos(\phi_R)
-                \end{pmatrix} 
-                \times
-                \begin{pmatrix}
-                \cos(\phi_{(\vec{V}_{xz}, \vec{V}_x)}) \\
-                \cos(\phi_{(\vec{V}, \vec{V}_y)}) \\
-                \sin(\phi_{(\vec{V}_{xz}, \vec{V}_x)})
-                \end{pmatrix}
-                \times 
-                \begin{pmatrix}
-                \|\vec{V}_{xz}\| \\
-                \|\vec{V}\| \\
-                \|\vec{V}_{xz}\|
-                \end{pmatrix}^\top
-  \end{equation*}
-  $$
+              \end{pmatrix}
+$$
+
+$$
+= \begin{pmatrix}
+    \cos(\phi_R) & 0 & \mp \sin(\phi_R) \\
+    0 & 1 & 0 \\
+    \pm \sin(\phi_R) & 0 & \cos(\phi_R)
+\end{pmatrix} 
+    \times
+\begin{pmatrix}
+    \cos(\phi_{(\vec{V}_{xz}, \vec{V}_x)}) \\
+    \cos(\phi_{(\vec{V}, \vec{V}_y)}) \\
+    \sin(\phi_{(\vec{V}_{xz}, \vec{V}_x)})
+\end{pmatrix}
+    \times 
+\begin{pmatrix}
+    \|\vec{V}_{xz}\| \\
+    \|\vec{V}\| \\
+    \|\vec{V}_{xz}\|
+\end{pmatrix}^\top
+$$
 
   * Rotation around Z-axis (**X-Convention**) using direction cosines:
-  
-  $$
-  \begin{equation*}
-  \vec{V}^{'} = R_z(\pm \hat{\Phi_R}) \times \vec{V} \\
-              =   
-                \begin{pmatrix}
+
+$$
+\vec{V}^{'} = R_z(\pm \hat{\Phi_R}) \times \vec{V} \\
+            = \begin{pmatrix}
                 \|\vec{V}_{xy}\|(\cos(\phi_{R})\cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \mp 
                 \sin(\phi_{R})\sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)})) \\
                 \|\vec{V}_{xy}\|(\pm \sin(\phi_{R})\cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) + \cos(\phi_{R})\sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)})) \\
                 \|\vec{V}\|\cos(\phi_{(\vec{V}, \vec{V}_z)})
-                \end{pmatrix}
-            \\ 
-              = \begin{pmatrix}
-                  \cos(\phi_R) & \mp \sin(\phi_R) & 0 \\
-                  \pm \sin(\phi_R) & \cos(\phi_R) & 0 \\
-                  0 & 0 & 1
-                \end{pmatrix} 
-                \times
-                \begin{pmatrix}
-                \cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \\
-                \sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \\
-                \cos(\phi_{(\vec{V}, \vec{V}_z)}) \\
-                \end{pmatrix}
-                \times 
-                \begin{pmatrix}
-                \|\vec{V}_{xy}\| \\
-                \|\vec{V}_{xy}\| \\
-                \|\vec{V}\|
-                \end{pmatrix}^\top
-  \end{equation*}
-  $$
+            \end{pmatrix}
+$$
+
+$$
+= \begin{pmatrix}
+    \cos(\phi_R) & \mp \sin(\phi_R) & 0 \\
+    \pm \sin(\phi_R) & \cos(\phi_R) & 0 \\
+    0 & 0 & 1
+  \end{pmatrix} 
+      \times
+  \begin{pmatrix}
+    \cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \\
+    \sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \\
+    \cos(\phi_{(\vec{V}, \vec{V}_z)}) \\
+  \end{pmatrix}
+      \times 
+  \begin{pmatrix}
+    \|\vec{V}_{xy}\| \\
+    \|\vec{V}_{xy}\| \\
+    \|\vec{V}\|
+  \end{pmatrix}^\top
+ $$
 
   * A set of rotations could be achieved by multiplying the rotation matrices to get the final rotation matrix, and then multiply it with the vector coordinates.
 
@@ -218,7 +211,7 @@ $$
 > * The rotation matrix could be derived from the result of the addition trigonometric identities retrieved after adding the angle $\phi_{R}$ to the initial angle $\phi_{0}$.
 > * The resulting vector (v') could be obtained by other means: 
 >    1) Adding the angle of rotation to the initial angle and constructing the rectangular coordinates from the polar vector.
->    2) Deriving the final vector (v') by evaluating the addition trigonometeric identities (i.e., $\cos(\phi_0 \pm \phi_R)$ and $\sin(\phi_0 \pm \phi_R)$).
+>    2) Deriving the final vector (v') by evaluating the addition trigonometeric identities (i.e., $\cos(\phi_0 \pm \phi_R)$ and $\sin(\phi_0 \pm \phi_R)$ ).
 
 * Mathematical Modelling: Errors of Rotation and Error Handling Techniques.
 
