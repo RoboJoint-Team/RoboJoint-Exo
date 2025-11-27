@@ -80,6 +80,7 @@ The mathematical model is based on the vector rotational transformation model th
 #### The mathematical model of rotating vectors around a prime axis:
 
 * Let vector $\vec{V}$ be a vector in an $R^3$ vectorspace; such that:
+
 $$
 \begin{equation*}
 \vec{V} = \begin{pmatrix}
@@ -91,6 +92,7 @@ $$
 $$
 
 * Therefore, the rotated vector around the X-axis using angle $\phi_R$ with the positive direction of Z-axis (Z-convention) using the direction cosines methodology; could be rewritten as a function of the rotational angle by evaluating the addition trigonometric identity using the Euclidean Geometry:
+
 $$ 
 \begin{equation*}
 \vec{V}^{'} = \begin{pmatrix}
@@ -142,6 +144,7 @@ $$
 
 * Therefore, the rest of rotation operations could be expressed using rotation matrices as follows:
   * Rotation around Y-axis (**X-convention**):
+  
   $$
   \vec{V}^{'} = R_y(\pm \hat{\Phi_R}) \times \vec{V} \\
               =   
@@ -172,34 +175,36 @@ $$
   $$
 
   * Rotation around Z-axis (**X-Convention**) using direction cosines:
+  
   $$
-    \vec{V}^{'} = R_z(\pm \hat{\Phi_R}) \times \vec{V} \\
-                =   
-                  \begin{pmatrix}
-                  \|\vec{V}_{xy}\|(\cos(\phi_{R})\cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \mp 
-                  \sin(\phi_{R})\sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)})) \\
-                  \|\vec{V}_{xy}\|(\pm \sin(\phi_{R})\cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) + \cos(\phi_{R})\sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)})) \\
-                  \|\vec{V}\|\cos(\phi_{(\vec{V}, \vec{V}_z)})
-                  \end{pmatrix}
-              \\ 
-                = \begin{pmatrix}
-                    \cos(\phi_R) & \mp \sin(\phi_R) & 0 \\
-                    \pm \sin(\phi_R) & \cos(\phi_R) & 0 \\
-                    0 & 0 & 1
-                  \end{pmatrix} 
-                  \times
-                  \begin{pmatrix}
-                  \cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \\
-                  \sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \\
-                  \cos(\phi_{(\vec{V}, \vec{V}_z)}) \\
-                  \end{pmatrix}
-                  \times 
-                  \begin{pmatrix}
-                  \|\vec{V}_{xy}\| \\
-                  \|\vec{V}_{xy}\| \\
-                  \|\vec{V}\|
-                  \end{pmatrix}^\top
+  \vec{V}^{'} = R_z(\pm \hat{\Phi_R}) \times \vec{V} \\
+              =   
+                \begin{pmatrix}
+                \|\vec{V}_{xy}\|(\cos(\phi_{R})\cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \mp 
+                \sin(\phi_{R})\sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)})) \\
+                \|\vec{V}_{xy}\|(\pm \sin(\phi_{R})\cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) + \cos(\phi_{R})\sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)})) \\
+                \|\vec{V}\|\cos(\phi_{(\vec{V}, \vec{V}_z)})
+                \end{pmatrix}
+            \\ 
+              = \begin{pmatrix}
+                  \cos(\phi_R) & \mp \sin(\phi_R) & 0 \\
+                  \pm \sin(\phi_R) & \cos(\phi_R) & 0 \\
+                  0 & 0 & 1
+                \end{pmatrix} 
+                \times
+                \begin{pmatrix}
+                \cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \\
+                \sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \\
+                \cos(\phi_{(\vec{V}, \vec{V}_z)}) \\
+                \end{pmatrix}
+                \times 
+                \begin{pmatrix}
+                \|\vec{V}_{xy}\| \\
+                \|\vec{V}_{xy}\| \\
+                \|\vec{V}\|
+                \end{pmatrix}^\top
   $$
+
   * A set of rotations could be achieved by multiplying the rotation matrices to get the final rotation matrix, and then multiply it with the vector coordinates.
 
 > [!TIP]
@@ -207,9 +212,10 @@ $$
 > * The rotation matrix could be derived from the result of the addition trigonometric identities retrieved after adding the angle $\phi_{R}$ to the initial angle $\phi_{0}$.
 > * The resulting vector (v') could be obtained by other means: 
 >    1) Adding the angle of rotation to the initial angle and constructing the rectangular coordinates from the polar vector.
->    2) Deriving the final vector (v') by evaluating the addition trigonometeric identities (i.e., $cos(\phi_0 \pm \phi_R)$ and $sin(\phi_0 \pm \phi_R)$).
+>    2) Deriving the final vector (v') by evaluating the addition trigonometeric identities (i.e., $\cos(\phi_0 \pm \phi_R)$ and $\sin(\phi_0 \pm \phi_R)$).
 
-* Mathematical Modelling: Errors of Rotation and Error Handling Techniques. 
+* Mathematical Modelling: Errors of Rotation and Error Handling Techniques.
+
 
 * Mathematical-Physical Model of angular (or rotational) motion in R(2) and R(3) vectorspaces:
 (WIP)
