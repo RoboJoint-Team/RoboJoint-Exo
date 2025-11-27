@@ -109,6 +109,7 @@ $$
 * The rotated vector around the X-axis with Z-convention expressed in direction cosines; could be further rewritten using matrix algebra into a **matrix product of a rotation matrix and the vector column matrix**; where $R_x$ is the rotation matrix around X-Axis with Z-convetion:
 
 $$
+\begin{equation*}
 \vec{V}^{'} = R_x(\pm \hat{\Phi_R}) \times \vec{V} \\
             = \begin{pmatrix}
                 1 & 0 & 0 \\
@@ -140,12 +141,14 @@ $$
               \|\vec{V}_{yz}\| \\
               \|\vec{V}_{yz}\|
               \end{pmatrix}^\top
+  \end{equation*}
 $$
 
 * Therefore, the rest of rotation operations could be expressed using rotation matrices as follows:
   * Rotation around Y-axis (**X-convention**):
   
   $$
+  \begin{equation*}
   \vec{V}^{'} = R_y(\pm \hat{\Phi_R}) \times \vec{V} \\
               =   
                 \begin{pmatrix}
@@ -172,11 +175,13 @@ $$
                 \|\vec{V}\| \\
                 \|\vec{V}_{xz}\|
                 \end{pmatrix}^\top
+  \end{equation*}
   $$
 
   * Rotation around Z-axis (**X-Convention**) using direction cosines:
   
   $$
+  \begin{equation*}
   \vec{V}^{'} = R_z(\pm \hat{\Phi_R}) \times \vec{V} \\
               =   
                 \begin{pmatrix}
@@ -203,6 +208,7 @@ $$
                 \|\vec{V}_{xy}\| \\
                 \|\vec{V}\|
                 \end{pmatrix}^\top
+  \end{equation*}
   $$
 
   * A set of rotations could be achieved by multiplying the rotation matrices to get the final rotation matrix, and then multiply it with the vector coordinates.
