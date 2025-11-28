@@ -102,7 +102,7 @@ $$
 $$
 
 
-* The rotated vector around the X-axis with Z-convention expressed in direction cosines; could be further rewritten using matrix algebra into a **matrix product of a rotation matrix and the vector column matrix**; where $R_x$ is the rotation matrix around X-Axis with Z-convetion:
+The rotated vector around the X-axis with Z-convention expressed in direction cosines; could be further rewritten using matrix algebra into a **matrix product of a rotation matrix and the vector column matrix**; where $R_x$ is the rotation matrix around X-Axis with Z-convetion:
 
 $$
 \vec{V}^{'} = R_x(\pm \hat{\Phi_R}) \times \vec{V} \\
@@ -113,42 +113,23 @@ $$
               \end{pmatrix} 
               \times
               \begin{pmatrix}
-               \|\vec{V}\|\cos(\phi_{(\vec{V}, \vec{V}_x)}) \\
-               \|\vec{V}_{yz}\|\sin(\phi_{(\vec{V}_{yz}, \vec{V}_z)}) \\
-               \|\vec{V}_{yz}\|\cos(\phi_{(\vec{V}_{yz}, \vec{V}_z)})
+               \|\vec{V}\|.\cos(\phi_{(\vec{V}, \vec{V}_x)}) \\
+               \|\vec{V}_{yz}\|.\sin(\phi_{(\vec{V}_{yz}, \vec{V}_z)}) \\
+               \|\vec{V}_{yz}\|.\cos(\phi_{(\vec{V}_{yz}, \vec{V}_z)})
               \end{pmatrix}
 $$
 
-$$
-= \begin{pmatrix}
-    1 & 0 & 0 \\
-    0 & \cos(\phi_{R}) & \pm \sin(\phi_{R}) \\
-    0 & \mp \sin(\Phi_R) & \cos(\phi_{R})
-\end{pmatrix} 
-    \times
-\begin{pmatrix}
-   \cos(\phi_{(\vec{V}, \vec{V}_x)}) \\
-   \sin(\phi_{(\vec{V}_{yz}, \vec{V}_z)}) \\
-   \cos(\phi_{(\vec{V}_{yz}, \vec{V}_z)})
-\end{pmatrix}
-    \times 
-\begin{pmatrix}
-  \|\vec{V}\| \\
-  \|\vec{V}_{yz}\| \\
-  \|\vec{V}_{yz}\|
-\end{pmatrix}^\top
-$$
+Therefore, the rest of rotation operations could be expressed using rotation matrices as follows:
 
-* Therefore, the rest of rotation operations could be expressed using rotation matrices as follows:
-  * Rotation around Y-axis (**X-convention**):
+* Rotation around Y-axis (**X-convention**):
   
 $$
 \vec{V}^{'} = R_y(\pm \hat{\Phi_R}) \times \vec{V} \\
             = \begin{pmatrix}
-                \|\vec{V}_{xz}\|(\cos(\phi_{R})\cos(\phi_{(\vec{V}_{xz}, \vec{V}_x)}) \mp 
+                \|\vec{V}_{xz}\|.(\cos(\phi_{R})\cos(\phi_{(\vec{V}_{xz}, \vec{V}_x)}) \mp 
                 \sin(\phi_{R})\sin(\phi_{(\vec{V}_{xz}, \vec{V}_x)})) \\
-                \|\vec{V}\|\cos(\phi_{(\vec{V}, \vec{V}_y)}) \\
-                \|\vec{V}_{xz}\|(\pm \sin(\phi_{R})\cos(\phi_{(\vec{V}_{xz}, \vec{V}_x)}) + \cos(\phi_{R})\sin(\phi_{(\vec{V}_{xz}, \vec{V}_x)})) 
+                \|\vec{V}\|.\cos(\phi_{(\vec{V}, \vec{V}_y)}) \\
+                \|\vec{V}_{xz}\|.(\pm \sin(\phi_{R})\cos(\phi_{(\vec{V}_{xz}, \vec{V}_x)}) + \cos(\phi_{R})\sin(\phi_{(\vec{V}_{xz}, \vec{V}_x)})) 
               \end{pmatrix}
 $$
 
@@ -160,27 +141,21 @@ $$
 \end{pmatrix} 
     \times
 \begin{pmatrix}
-    \cos(\phi_{(\vec{V}_{xz}, \vec{V}_x)}) \\
-    \cos(\phi_{(\vec{V}, \vec{V}_y)}) \\
-    \sin(\phi_{(\vec{V}_{xz}, \vec{V}_x)})
+    \|\vec{V}_{xz}\|.\cos(\phi_{(\vec{V}_{xz}, \vec{V}_x)}) \\
+    \|\vec{V}\|.\cos(\phi_{(\vec{V}, \vec{V}_y)}) \\
+    \|\vec{V}_{xz}\|.\sin(\phi_{(\vec{V}_{xz}, \vec{V}_x)})
 \end{pmatrix}
-    \times 
-\begin{pmatrix}
-    \|\vec{V}_{xz}\| \\
-    \|\vec{V}\| \\
-    \|\vec{V}_{xz}\|
-\end{pmatrix}^\top
 $$
 
-  * Rotation around Z-axis (**X-Convention**) using direction cosines:
+* Rotation around Z-axis (**X-Convention**) using direction cosines:
 
 $$
 \vec{V}^{'} = R_z(\pm \hat{\Phi_R}) \times \vec{V} \\
             = \begin{pmatrix}
-                \|\vec{V}_{xy}\|(\cos(\phi_{R})\cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \mp 
+                \|\vec{V}_{xy}\|.(\cos(\phi_{R})\cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \mp 
                 \sin(\phi_{R})\sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)})) \\
-                \|\vec{V}_{xy}\|(\pm \sin(\phi_{R})\cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) + \cos(\phi_{R})\sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)})) \\
-                \|\vec{V}\|\cos(\phi_{(\vec{V}, \vec{V}_z)})
+                \|\vec{V}_{xy}\|.(\pm \sin(\phi_{R})\cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) + \cos(\phi_{R})\sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)})) \\
+                \|\vec{V}\|.\cos(\phi_{(\vec{V}, \vec{V}_z)})
             \end{pmatrix}
 $$
 
@@ -192,16 +167,10 @@ $$
   \end{pmatrix} 
       \times
   \begin{pmatrix}
-    \cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \\
-    \sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \\
-    \cos(\phi_{(\vec{V}, \vec{V}_z)}) \\
+    \|\vec{V}_{xy}\|.\cos(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \\
+    \|\vec{V}_{xy}\|.\sin(\phi_{(\vec{V}_{xy}, \vec{V}_x)}) \\
+    \|\vec{V}\|.\cos(\phi_{(\vec{V}, \vec{V}_z)}) \\
   \end{pmatrix}
-      \times 
-  \begin{pmatrix}
-    \|\vec{V}_{xy}\| \\
-    \|\vec{V}_{xy}\| \\
-    \|\vec{V}\|
-  \end{pmatrix}^\top
  $$
 
   * A set of rotations could be achieved by multiplying the rotation matrices to get the final rotation matrix, and then multiply it with the vector coordinates.
@@ -215,6 +184,14 @@ $$
 
 * Mathematical Modelling: Errors of Rotation and Error Handling Techniques.
 
+**Gimbal Locks**: is a state of orientation in $R^3$ spaces created by rotating around an arbitrary by angle of $\frac{\pi}{2}$ (e.g., $R_x(\frac{\pi}{2})$ ) which results in a loss of a degree of freedom, in which two rotation matrices before and after performing this erroneous operation align in that coordinate system (e.g., $R_y(\hat{\beta})$ and $R_z(\hat{\gamma})$ ); under the conditions that one of them precedes the erroneous rotation, and the other proceeds them, and both the axes of the rotation matrices are orthogonal (i.e., $V_x = V_y \times V_z$ ).
+
+**Unlocking Gimbals**: there are various unlocking algorithm; one common algorithm is to **dynamically remap** rotation matrices of the two orthogonal axes, the other algorithm entails using **clamp functions** to prevent the literal value of $\frac{\pi}{2}$; the clamp functions increment or decrement the value of the angle by a very small amount approaching Zero; so it entails finding the angle in terms of the $\lim_{x=0}(\theta + x)$.
+
+> [!IMPORTANT]
+> Error Handling techniques (Anti-failure Measures) for Gimbal Locks:
+> (1) **Dynamic Remapping of rotation matrices** for the orthogonal axes that their cross product is the vector for which the erroneous rotation was performed about.
+> (2) **Clamping of the angle value using limits of the angle**.
 
 * Mathematical-Physical Model of angular (or rotational) motion in R(2) and R(3) vectorspaces:
 (WIP)
