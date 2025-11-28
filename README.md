@@ -33,8 +33,6 @@ https://github.com/user-attachments/assets/fdeb4a84-2ae8-438b-98f6-9c01f6907325
 
 https://github.com/user-attachments/assets/419610a7-11cb-4b3e-aa0f-cdb20b26bf9a
 
-
-
 ## Table of contents:
 ### Part.01: Problems 
   * 1.1 A brief list of problems for preview.
@@ -42,18 +40,21 @@ https://github.com/user-attachments/assets/419610a7-11cb-4b3e-aa0f-cdb20b26bf9a
   * 1.3 Problem Sets.
   * 1.4 Problem-problem relationship.
 ### Part.02: Solutions
-  * 2.1 A brife list of solution mappings to the problems.
+  * 2.1 A brief list of solution mappings to the problems.
   * 2.2 Detailed Solution analysis.
   * 2.3 Solution Sets.
   * 2.4 Derivation of System Components.
   * 2.5 Derivation of component-component relationships.
 ### Part.03: Requirements
   * 3.1 Software functional requirements.
-  * 3.2 Software Simulation.
-  * 3.3 Hardware functional requirements.
-  * 3.4 Hardware-software co-design in simulation environment.
-  * 3.5 Employment of AI Modules for fine-grained control.
-  * 3.6 Non-functional requirements.
+  * 3.2 Software Simulation Specification document.
+  * 3.3 Physics and Vector Maths Specification document.
+  * 3.4 Employment of AI Software Modules for fine-grained control.
+  * 3.5 Hardware functional requirements.
+  * 3.6 Hardware-Software Specification document.
+  * 3.7 Hardware-software co-design in simulation environment.
+  * 3.8 Employment of AI Modules for fine-grained control.
+  * 3.9 Hardware-Software Non-functional requirements.
 ### Part.04: Circuit Design and Hardware-Software Implementation
 WIP
 

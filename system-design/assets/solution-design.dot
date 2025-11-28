@@ -1,0 +1,86 @@
+digraph HierarchicalPattern {
+    rankdir=TB;
+
+    // First hierarchy
+    Problem [label="Problem:\nMedical Conditions\nSCI, Stroke, Syndromes", shape=box, style="bold, filled", fillcolor="lightblue"];
+    Solution [label="Solution:\nRehabilitation using robotic-assisted aids\nEmulating human joints biomechanics", shape=box, style="bold, filled", fillcolor="lightgreen"];
+
+    Model [label="Model:\n1. Mathematical Model\n2. Physical Model", shape=polygon, style="dashed"];
+    MathematicalModel [label="Mathematical Model:\nEuler angles, Rotation matrices", shape=box];
+    PhysicalModel [label="Physical Model:\nJoints in equilibrium,\nJoints Kinematics", shape=box];
+
+    subgraph cluster_Electrostatic {
+        rankdir=TB;
+        label="Electrostatic-Sandbox SDK";
+        style="filled";
+        fillcolor="lightblue";
+
+        shape=folder;
+        ArithmosFramework [label="ElectroNetSoft: Arithmos Framework", shape=folder]
+        PhysicsLibs [label="Physics Libraries:\nDelta-Engine3D", shape=folder];
+        Baremetal [label="Baremetal:\nGPIO, ADC, UART, I2C, PWM", shape=folder];
+        LinuxKernel [label="Linux Kernel System Calls", shape=folder];
+    }
+
+    // Updated second hierarchy: SDK with HAL inside
+    subgraph cluster_SDK {
+        rankdir=TB;
+        label="RobotExo SDK";
+        style="filled";
+        fillcolor="lightgray";
+        shape=folder;
+        KinematicsProcessor [label="Kinematics Processor Module", shape=folder];
+        SimulatorWiring [label="Simulator Wiring Module", shape=folder];
+        HardwareWiring [label="Hardware Wiring Module", shape=folder];
+        AIControl [label="AI Automated Control Module: Ai3D", shape=folder];
+        HAL [label="Hardware-Software Abstraction Layer (HSAL)", shape=folder];
+    }
+    
+    subgraph cluster_Hardware {
+        rankdir=TB; // Force the hardware modules layout in a vertical column
+        label="Hardware Modules";
+        style="filled";
+        fillcolor="lightgreen";
+        shape=folder;
+    
+        CPU [label="CPU/Software Module", shape=folder];
+        JointModule [label="Joint Module\n(Motor & Motor Driver Components)", shape=folder];
+        SensorsModule [label="Sensors Module", shape=folder];
+        BatteryModule [label="Battery Module", shape=folder];
+        CommModule [label="Comm Module", shape=folder];
+        FaultToleranceModule [label="Fault Tolerance Module", shape=folder, color="red"];
+    
+        // Invisible arrows for vertical alignment
+        CPU -> JointModule [style=invis];
+        JointModule -> SensorsModule [style=invis];
+        SensorsModule -> BatteryModule [style=invis];
+        BatteryModule -> CommModule [style=invis];
+        CommModule -> FaultToleranceModule [style=invis];
+    }
+  
+    // Connections between hierarchies
+    PhysicsLibs -> ArithmosFramework [label="Delegation"];
+    Problem -> Solution
+    Solution -> Model
+    Model -> MathematicalModel
+    Model -> PhysicalModel
+    HAL -> PhysicsLibs [label="Abstract Callbacks", dir="both"]
+    HardwareWiring -> HAL
+    SimulatorWiring -> HAL
+    Baremetal -> CPU [dir="both"]
+    Baremetal -> JointModule [label="Controls"]
+    LinuxKernel -> CPU [dir="both"]
+    LinuxKernel -> JointModule [label="Controls"]
+    PhysicsLibs -> LinuxKernel
+    PhysicsLibs -> Baremetal
+    
+    // Additional connection linking the two hierarchies explicitly
+    PhysicalModel -> KinematicsProcessor [label="Feeds into"];
+    MathematicalModel -> PhysicsLibs [label="Guides Design"];
+    AIControl -> HAL [label="Depends-On"]
+    KinematicsProcessor -> HAL [label="Depends-On"]
+    SimulatorWiring -> SensorsModule [label="Simulates"]
+
+    SensorsModule -> CPU
+    SensorsModule -> JointModule [label="Attached-to"]
+}
