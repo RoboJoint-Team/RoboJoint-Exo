@@ -204,7 +204,7 @@ $$
 
 * Software Architectural Design of the involved subsystems and components:
 
-<img src="solution-design.svg">
+<img src="https://github.com/RoboJoint-Team/RoboJoint-Exo/blob/main/system-design/assets/solution-design.svg">
 
 ### References
 1) [Harrison's Principles of Medicine $20^{th}$ edition](https://accessmedicine.mhmedical.com/content.aspx?bookId=2129&sectionId=159213747)
